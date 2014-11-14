@@ -2,12 +2,11 @@
 
 <div class="timetable" ng-controller="TimetableCtrl">
   <h2>You have taken {{ lunchCount }} times of PepperLunch</h2>
-  <div class="btn btn-success" ng-click="increment()">+1</div>
 
   <div class="row week" ng-repeat="week in weeks">
     <div class="col-md-2 number">Week {{ $index + 1 }}</div>
     <div class="col-md-2 day" ng-repeat="day in week">
-      <div class="btn btn-success">{{ day }}</div>
+      <div class="btn btn-success" ng-class="getClass(day)" ng-click="increment($parent.$index, $index)">{{ day }}</div>
     </div>
   </div>
 
